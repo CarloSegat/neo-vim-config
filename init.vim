@@ -9,7 +9,11 @@ let mapleader = "," " map leader key as ,
 :nmap <leader>vs :vsplit<Cr>
 :nmap <leader><Tab> :tabn <Cr>
 :tnoremap <Esc> <C-\><C-N> "escape terminal mode
-
+" moving between windows
+:nmap <C-h> <C-w>h
+:nmap <C-j> <C-w>j
+:nmap <C-k> <C-w>k
+:nmap <C-l> <C-w>l
 " ---------- Terminal Controls ----
 :nmap <leader>vt :vsplit term://zsh<Cr>
 :nmap <leader>ht :split term://zsh<Cr>
