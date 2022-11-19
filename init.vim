@@ -1,3 +1,5 @@
+" Load lua config
+lua require('config')
 " The MAPLEADER needs to be KEPT PRESSED to activate stuff
 let mapleader = "," " map leader key as ,
 
