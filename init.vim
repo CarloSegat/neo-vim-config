@@ -19,7 +19,12 @@ let mapleader = "," " map leader key as ,
 :nmap <leader>vt :vsplit term://zsh<Cr>
 :nmap <leader>ht :split term://zsh<Cr>
 :tnoremap jj <C-\><C-n> " Exit Insert Mode
-
+"----------- Enable file type detection ----
+:filetype on
+"---------- To fold json files, use za to toggle fold
+:set filetype=json
+:syntax on
+:set foldmethod=syntax
 " ---------- Basics ---------
 set encoding=utf8
 set autoindent " line below indented as line above
