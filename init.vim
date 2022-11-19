@@ -41,11 +41,16 @@ set smartcase  " use case in searches if u use CAPS
 set noswapfile " if u don't disable this then vim would create .swp files automatically
 autocmd BufWritePre * %s/\s\+$//e "Auto-remove trailing whitespace on save
 set path+=** " so that /find becomes a fuzzy file finder
+
 " ---------- Theme ---------
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
 syntax enable
 
+" ---------- Snippets ---------
+" Pastes a print statement with the yanked variable inside {} making sure to
+" keep indentation as above
+nnoremap <leader>pp :read ~/.config/nvim/snippets/python/printf.py<Cr>t{pt}pk0y^jP
 " ---------- Plugins ------
 " COnfigurations done for a pluging are added below the plugin line
 call plug#begin('~/.config/nvim/bundle')
