@@ -17,6 +17,16 @@ let mapleader = "," " map leader key as ,
 :nmap <C-j> <C-w>j
 :nmap <C-k> <C-w>k
 :nmap <C-l> <C-w>l
+" H to move to the first character in a line
+noremap H ^
+" L to move to the last character in a line
+noremap L g_
+" Move down file lines
+noremap J 5j
+vnoremap J 5j
+" Move up file lines
+noremap K 5k
+vnoremap K 5k
 " ---------- Terminal Controls ----
 :nmap <leader>vt :vsplit term://zsh<Cr>
 :nmap <leader>ht :split term://zsh<Cr>
