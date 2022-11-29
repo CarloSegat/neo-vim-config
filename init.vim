@@ -94,4 +94,6 @@ Plug 'scrooloose/nerdtree'
 
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+Plug 'tpope/vim-surround'
+
 call plug#end()
