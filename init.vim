@@ -36,7 +36,8 @@ vnoremap K 5k
 "---------- To fold json files, use za to toggle fold
 :set filetype=json
 :syntax on
-:set foldmethod=syntax
+" :set foldmethod=syntax
+:set foldmethod=indent
 " ---------- Basics ---------
 set encoding=utf8
 set autoindent " line below indented as line above
