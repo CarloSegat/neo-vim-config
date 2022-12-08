@@ -92,8 +92,9 @@ Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build'
 
 Plug 'scrooloose/nerdtree'
 
-Plug 'Xuyuanp/nerdtree-git-plugin'
-
 Plug 'tpope/vim-surround'
+
+Plug 'yaegassy/coc-volar', {'do': 'yarn install --frozen-lockfile'}
+Plug 'yaegassy/coc-volar-tools', {'do': 'yarn install --frozen-lockfile'}
 
 call plug#end()
