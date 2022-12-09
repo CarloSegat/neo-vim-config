@@ -65,6 +65,7 @@ syntax enable
 " Pastes a print statement with the yanked variable inside {} making sure to
 " keep indentation as above
 nnoremap <leader>pp :read ~/.config/nvim/snippets/python/printf.py<Cr>t{pt}pk0y^jP
+nnoremap <leader>vue :read ~/.config/nvim/snippets/vue/single-file-component.vue<Cr>
 " ---------- Plugins ------
 " COnfigurations done for a pluging are added below the plugin line
 call plug#begin('~/.config/nvim/bundle')
