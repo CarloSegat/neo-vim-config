@@ -54,6 +54,7 @@ set smartcase  " use case in searches if u use CAPS
 set noswapfile " if u don't disable this then vim would create .swp files automatically
 autocmd BufWritePre * %s/\s\+$//e "Auto-remove trailing whitespace on save
 set path+=** " so that /find becomes a fuzzy file finder
+:set nofoldenable " so that when you open a file it doesnt start wrapped
 
 " ---------- Theme ---------
 " Display tabs and trailing spaces visually
