@@ -27,17 +27,21 @@ vnoremap J 5j
 " Move up file lines
 noremap K 5k
 vnoremap K 5k
+
 " ---------- Terminal Controls ----
 :nmap <leader>vt :vsplit term://zsh<Cr>
 :nmap <leader>ht :split term://zsh<Cr>
 :tnoremap jj <C-\><C-n> " Exit Insert Mode
+
 "----------- Enable file type detection ----
 :filetype on
+
 "---------- To fold json files, use za to toggle fold
 :set filetype=json
 :syntax on
 " :set foldmethod=syntax
 :set foldmethod=indent
+
 " ---------- Basics ---------
 set encoding=utf8
 set autoindent " line below indented as line above
@@ -66,6 +70,7 @@ syntax enable
 " keep indentation as above
 nnoremap <leader>pp :read ~/.config/nvim/snippets/python/printf.py<Cr>t{pt}pk0y^jP
 nnoremap <leader>vue :read ~/.config/nvim/snippets/vue/single-file-component.vue<Cr>
+
 " ---------- Plugins ------
 " COnfigurations done for a pluging are added below the plugin line
 call plug#begin('~/.config/nvim/bundle')
@@ -88,15 +93,22 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+" the return key can be used to say yes to autoimport suggestion if you see it
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" jedi is a static analysis tool for python
-Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
+" Python LSP server
+Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'scrooloose/nerdtree'
+" force nerdTRee menu that opens with ctrl+m to take one line, otherwise on
+" mac it keeps occupying space after you closed it
+let g:NERDTreeMinimalMenu=1
 
 Plug 'tpope/vim-surround'
 
 Plug 'yaegassy/coc-volar', {'do': 'yarn install --frozen-lockfile'}
 Plug 'yaegassy/coc-volar-tools', {'do': 'yarn install --frozen-lockfile'}
+
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 
 call plug#end()
