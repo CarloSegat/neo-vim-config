@@ -70,6 +70,13 @@ set path+=** " so that /find becomes a fuzzy file finder
 set list listchars=tab:\ \ ,trail:·
 syntax enable
 
+" style for spell checking, has to be after configs that change theme/colors
+hi clear SpellBad
+" hi clear SpellCap
+" hi clear SpellRare
+hi clear SpellLocal
+hi SpellBad cterm=underline ctermfg=red
+
 " ---------- Snippets ---------
 " Pastes a print statement with the yanked variable inside {} making sure to
 " keep indentation as above
