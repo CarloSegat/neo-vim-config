@@ -101,6 +101,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 " the return key can be used to say yes to autoimport suggestion if you see it
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+nnoremap <leader>rn <Plug>(coc-rename)
 
 " Python LSP server
 Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}
