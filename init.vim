@@ -70,6 +70,7 @@ syntax enable
 " keep indentation as above
 nnoremap <leader>pp :read ~/.config/nvim/snippets/python/printf.py<Cr>t{pt}pk0y^jP
 nnoremap <leader>vue :read ~/.config/nvim/snippets/vue/single-file-component.vue<Cr>
+nnoremap <leader>tsi :read ~/.config/nvim/snippets/typescript/print.ts<Cr>t$pt}p
 
 " ---------- Plugins ------
 " COnfigurations done for a pluging are added below the plugin line
