@@ -60,6 +60,11 @@ autocmd BufWritePre * %s/\s\+$//e "Auto-remove trailing whitespace on save
 set path+=** " so that /find becomes a fuzzy file finder
 :set nofoldenable " so that when you open a file it doesnt start wrapped
 
+" ---------- Spell Check ----------
+:set spell spelllang=en_us
+:set spellsuggest=fast,20 "Don't show too much suggestion for spell check.
+:set spellfile=~/.config/nvim/en.utf-8.add
+
 " ---------- Theme ---------
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
