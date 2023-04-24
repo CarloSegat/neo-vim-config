@@ -22,11 +22,14 @@ noremap H ^
 " L to move to the last character in a line
 noremap L g_
 " Move down file lines
-noremap J 5j
-vnoremap J 5j
+:noremap J 5j
+:vnoremap J 5j
 " Move up file lines
-noremap K 5k
-vnoremap K 5k
+:noremap K 5k
+:vnoremap K 5k
+" cancel NERDTree mappings for J and K so that they work in NERDTree
+let NERDTreeMapJumpLastChild=''
+let NERDTreeMapJumpFirstChild=''
 
 " ---------- Terminal Controls ----
 :nmap <leader>vt :vsplit term://zsh<Cr>
@@ -52,13 +55,17 @@ set clipboard=unnamedplus
 set number " line numbers
 set relativenumber
 set incsearch " jump to search match as typing
-set nohlsearch " don't highlight my searches
 set ignorecase " ignore case in searches
 set smartcase  " use case in searches if u use CAPS
 set noswapfile " if u don't disable this then vim would create .swp files automatically
 autocmd BufWritePre * %s/\s\+$//e "Auto-remove trailing whitespace on save
 set path+=** " so that /find becomes a fuzzy file finder
 :set nofoldenable " so that when you open a file it doesnt start wrapped
+
+" shows matches of a serach in a split
+set inccommand=split
+:set hlsearch "enable highligting
+map <esc> :noh<cr> " hide highlights
 
 " ---------- Spell Check ----------
 :set spell spelllang=en_us
@@ -69,6 +76,8 @@ set path+=** " so that /find becomes a fuzzy file finder
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
 syntax enable
+highlight ColorColumn ctermbg=0 guibg=grey
+set colorcolumn=79,90 " column at 79 characters
 
 " style for spell checking, has to be after configs that change theme/colors
 hi clear SpellBad
@@ -76,6 +85,11 @@ hi clear SpellBad
 " hi clear SpellRare
 hi clear SpellLocal
 hi SpellBad cterm=underline ctermfg=red
+
+" git-fugitive highlights
+hi DiffRemoved ctermfg=red
+hi DiffAdded ctermfg=green
+let g:fugitive_dynamic_colors = 1
 
 " ---------- Snippets ---------
 " Pastes a print statement with the yanked variable inside {} making sure to
@@ -124,5 +138,7 @@ Plug 'yaegassy/coc-volar', {'do': 'yarn install --frozen-lockfile'}
 Plug 'yaegassy/coc-volar-tools', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
