@@ -77,7 +77,8 @@ map <esc> :noh<cr> " hide highlights
 set list listchars=tab:\ \ ,trail:·
 syntax enable
 highlight ColorColumn ctermbg=0 guibg=grey
-set colorcolumn=79,90 " column at 79 characters
+" rulers, columns, lines at 79 and 100 characters
+set colorcolumn=79,100
 
 " style for spell checking, has to be after configs that change theme/colors
 hi clear SpellBad
