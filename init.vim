@@ -129,9 +129,12 @@ nnoremap <leader>rn <Plug>(coc-rename)
 Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'scrooloose/nerdtree'
+
 " force nerdTRee menu that opens with ctrl+m to take one line, otherwise on
 " mac it keeps occupying space after you closed it
-let g:NERDTreeMinimalMenu=1
+if has('mac')
+    let g:NERDTreeMinimalMenu=1
+endif
 
 Plug 'tpope/vim-surround'
 
