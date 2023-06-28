@@ -145,4 +145,14 @@ Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'tpope/vim-fugitive'
 
+" fzf is a fuzzy file finder
+" it can find files by name or content
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 call plug#end()
+
+" fzf to search file name
+nnoremap <C-p> :Files<Cr>
+" fzf to search file content
+nnoremap <C-k> :Ag<Cr>
