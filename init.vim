@@ -155,4 +155,4 @@ call plug#end()
 " fzf to search file name
 nnoremap <C-p> :Files<Cr>
 " fzf to search file content
-nnoremap <C-k> :Ag<Cr>
+nnoremap <C-k>k :Ag<Cr>
