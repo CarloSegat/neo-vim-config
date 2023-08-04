@@ -11,7 +11,6 @@ let mapleader = "," " map leader key as ,
 :nmap <leader>vs :vsplit<Cr>
 :nmap <leader><Tab> :tabn <Cr>
 :tnoremap <Esc> <C-\><C-N> "escape terminal mode
-:command E NERDTree " use NERDTree as default file explorer
 " moving between windows
 :nmap <C-h> <C-w>h
 :nmap <C-j> <C-w>j
@@ -27,9 +26,19 @@ noremap L g_
 " Move up file lines
 :noremap K 5k
 :vnoremap K 5k
+
+" close all buffers except nerdTree
+:noremap <leader>wa :%bd<Cr>:NERDTree<Cr>:wincmd p<Cr>
+
+" NERDTREE
+:command E NERDTree " use NERDTree as default file explorer
 " cancel NERDTree mappings for J and K so that they work in NERDTree
 let NERDTreeMapJumpLastChild=''
 let NERDTreeMapJumpFirstChild=''
+
+" open NERDTree when vim launches and moves cursor to file area
+autocmd VimEnter * NERDTree | wincmd p
+autocmd bufenter * if (winnr ("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " ---------- Terminal Controls ----
 :nmap <leader>vt :vsplit term://zsh<Cr>
