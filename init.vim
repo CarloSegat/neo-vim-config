@@ -105,7 +105,6 @@ let g:fugitive_dynamic_colors = 1
 " Pastes a print statement with the yanked variable inside {} making sure to
 " keep indentation as above
 nnoremap <leader>pp :read ~/.config/nvim/snippets/python/printf.py<Cr>t{pt}pk0y^jP
-nnoremap <leader>vue :read ~/.config/nvim/snippets/vue/single-file-component.vue<Cr>
 nnoremap <leader>tsi :read ~/.config/nvim/snippets/typescript/print.ts<Cr>t$pt}p
 
 " ---------- Plugins ------
@@ -157,6 +156,11 @@ Plug 'tpope/vim-fugitive'
 " it can find files by name or content
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+" svelte syntax hoghlighter
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
 
 call plug#end()
 

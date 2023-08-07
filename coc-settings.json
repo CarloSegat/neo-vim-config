@@ -1,6 +1,7 @@
 {
    "suggest.noselect": true,
    "javascript.suggest.autoImports": true,
-   "typescript.suggest.autoImports": true
+  "typescript.suggest.autoImports": true,
+  "svelte.enable-ts-plugin": true
 }
 
