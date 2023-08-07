@@ -168,3 +168,5 @@ call plug#end()
 nnoremap <C-p> :Files<Cr>
 " fzf to search file content
 nnoremap <C-k>k :Ag<Cr>
+" below fixes Ag failing
+let $FZF_DEFAULT_COMMAND=""
