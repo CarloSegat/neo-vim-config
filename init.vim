@@ -136,6 +136,8 @@ nnoremap <leader>rn <Plug>(coc-rename)
 
 " Python LSP server
 Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}
+" Python text object based on indentation
+Plug 'michaeljsmith/vim-indent-object'
 
 Plug 'scrooloose/nerdtree'
 
@@ -146,9 +148,6 @@ if has('mac')
 endif
 
 Plug 'tpope/vim-surround'
-
-Plug 'yaegassy/coc-volar', {'do': 'yarn install --frozen-lockfile'}
-Plug 'yaegassy/coc-volar-tools', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 
